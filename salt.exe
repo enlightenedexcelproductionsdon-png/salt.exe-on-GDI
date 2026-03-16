@@ -289,3 +289,131 @@ void PlayBytebeatAudio() {
         std::this_thread::sleep_for(std::chrono::microseconds(23)); // Approximate timing
     }
 }
+#include <iostream>
+#include <string>
+#include <stdexcept>
+
+class Salt {
+public:
+    void run() {
+        std::string input;
+        std::cout << "Welcome to Salt.exe version 2.1!" << std::endl;
+        std::cout << "Please enter a string to process (type 'exit' to quit): ";
+
+        while (true) {
+            std::getline(std::cin, input);
+            if (input == "exit") {
+                std::cout << "Exiting the program. Goodbye!" << std::endl;
+                break;
+            }
+            try {
+                processInput(input);
+            } catch (const std::invalid_argument& e) {
+                std::cerr << "Error: " << e.what() << std::endl;
+            }
+            std::cout << "Please enter another string (type 'exit' to quit): ";
+        }
+    }
+
+private:
+    void processInput(const std::string& input) {
+        if (input.empty()) {
+            throw std::invalid_argument("Input cannot be empty.");
+        }
+        // Simulate processing by reversing the string
+        std::string processed = std::string(input.rbegin(), input.rend());
+        std::cout << "Processed output: " << processed << std::endl;
+    }
+};
+
+int main() {
+    Salt saltApp;
+    saltApp.run();
+    return 0;
+}
+#include <iostream>
+#include <string>
+#include <stdexcept>
+
+class Salt {
+public:
+    void run() {
+        std::string input;
+        std::cout << "Welcome to Salt.exe version 2.1!" << std::endl;
+        std::cout << "Please enter a string to process (type 'exit' to quit): ";
+
+        while (true) {
+            std::getline(std::cin, input);
+            if (input == "exit") {
+                std::cout << "Exiting the program. Goodbye!" << std::endl;
+                break;
+            }
+            try {
+                processInput(input);
+            } catch (const std::invalid_argument& e) {
+                std::cerr << "Error: " << e.what() << std::endl;
+            }
+            std::cout << "Please enter another string (type 'exit' to quit): ";
+        }
+    }
+
+private:
+    void processInput(const std::string& input) {
+        if (input.empty()) {
+            throw std::invalid_argument("Input cannot be empty.");
+        }
+        // Simulate processing by reversing the string
+        std::string processed = std::string(input.rbegin(), input.rend());
+        std::cout << "Processed output: " << processed << std::endl;
+    }
+};
+
+int main() {
+    Salt saltApp;
+    saltApp.run();
+    return 0;
+}
+#include <windows.h>
+
+int main() {
+    // Display a message box with Yes and No options
+    int response = MessageBox(
+        NULL, 
+        "Are you sure GDI Warning?", 
+        "GDI Warning", 
+        MB_YESNO | MB_ICONWARNING
+    );
+
+    // Check the user's response
+    if (response == IDYES) {
+        // User clicked Yes
+        MessageBox(NULL, "You clicked Yes.", "Response", MB_OK);
+    } else {
+        // User clicked No
+        MessageBox(NULL, "You clicked No.", "Response", MB_OK);
+    }
+
+    return 0;
+}
+#include <windows.h>
+
+int main() {
+    // Display a message box with Yes and No options
+    int response = MessageBox(
+        NULL, 
+        "Are you sure GDI Warning?", 
+        "GDI Warning", 
+        MB_YESNO | MB_ICONWARNING
+    );
+
+    // Check the user's response
+    if (response == IDYES) {
+        // User clicked Yes
+        MessageBox(NULL, "You clicked Yes.", "Response", MB_OK);
+    } else {
+        // User clicked No
+        MessageBox(NULL, "You clicked No.", "Response", MB_OK);
+    }
+
+    return 0;
+}
